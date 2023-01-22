@@ -477,6 +477,14 @@ WP_Mock provides a few dummy files, located in the `./php/WP_Mock/API/dummy-file
 
 The `! defined` check is used for all constants, so that individual test environments can override the normal default by setting constants in a bootstrap configuration file.
 
+
+## Troubleshooting
+
+### This test did not perform any assertions
+
+Make sure you're extendting `\WP_Mock\Tools\TestCase` and then add `$this->assertConditionsMet()` to the bottom of your test.  See [this issue](https://github.com/10up/wp_mock/issues/124) for more details.
+
+
 ## Support Level
 
 **Active:** 10up is actively working on this, and we expect to continue work for the foreseeable future including keeping tested up to the most recent version of WordPress.  Bug reports, feature requests, questions, and pull requests are welcome.
